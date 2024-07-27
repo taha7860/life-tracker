@@ -1,10 +1,9 @@
 .container {
     background: linear-gradient(to bottom left, var(--primary-colour), var(--gradient-colour));
-    height: 93vh;
+    height: 850px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: auto
 }
 
 .innercontainer {
@@ -48,9 +47,9 @@ p {
     margin-bottom: 70px;
 }
 
-a {
+.link {
     font-size: 1.05rem;
-    color: black;
+    color: var(--gradient-colour);
     text-decoration: none;
     background-color: var(--background-colour);
     padding: 1rem 3rem;
@@ -66,8 +65,20 @@ a:hover {
 
 #image2 {
     position: fixed;
-    top: 10px;
-    right: 10px;
-    height: 40px;
+    top: 20px;
+    right: 20px;
+    height: 35px;
     width: auto;
+}
+
+@media screen and (max-width: 480px) {
+    .innercontainer {
+        flex-direction: column;
+        height: 50rem;
+        width: 18rem;
+    }
+    .text {
+        text-align: center;
+        margin-bottom: 70px;
+    }
 }

@@ -1,8 +1,9 @@
 :root {
   --primary-colour: rgba(228,67,50,255);
+  --secondary-colour: rgb(255, 38, 0);
   --gradient-colour: rgb(255, 72, 0);
   --background-colour: white;
-  --hover-colour: rgb(167, 167, 167);
+  --hover-colour: rgb(223, 223, 223);
 }
 
 html, body {
