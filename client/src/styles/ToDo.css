@@ -1,0 +1,19 @@
+main {
+    gap: 100px;
+}
+
+.add {
+    background-color: var(--background-colour);
+    border: none;
+    font-size: 0.95rem;
+    padding: 15px 0;
+    color: gray;
+}
+
+.add:hover {
+    color: var(--primary-colour);
+}
+
+.add span {
+    margin-left: 5px;
+}

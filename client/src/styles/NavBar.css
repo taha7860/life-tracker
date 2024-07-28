@@ -1,11 +1,12 @@
 aside {
     height: 100vh;
-    width: 260px;
-    padding: 90px 10px;
+    width: 240px;
+    padding: 95px 10px;
     color: black;
     border-right: 1px solid lightgray;
     position: fixed;
     overflow: auto;
+    box-sizing: border-box;
 }
 
 ul {
@@ -13,7 +14,7 @@ ul {
     padding: 0px;
 }
 
-li {
+.list-item {
     display: flex;
     align-items: center;
     height: 40px;
@@ -21,28 +22,30 @@ li {
     border-radius: 15px;
     transition: 0.3s ease-in-out;
     color: gray;
+    box-sizing: content-box;
+    text-decoration: none;
 }
 
 li:last-child {
     margin-top: 100px;
 }
 
+.list-item:not(.active):hover {
+    background-color: var(--hover-colour);
+    color: var(--secondary-colour);
+    cursor: pointer;
+}
+
+.chevron {
+    margin-left: auto;
+    font-size: 0.8rem;
+}
+
 span {
     margin-left: 15px;
 }
 
-li:hover {
-    background-color: var(--hover-colour);
-    color: var(--secondary-colour);
-}
-
-li:active {
-    background-color: var(--hover-colour);
-    color: var(--secondary-colour);
-}
-
-.chevron {
-    position: absolute;
-    right: 30px;
-    font-size: 0.8rem;
+.active {
+    color: var(--background-colour);
+    background: linear-gradient(to bottom left, var(--primary-colour), var(--secondary-colour));
 }

@@ -1,21 +1,20 @@
 import '../styles/NavBar.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList } from '@fortawesome/free-solid-svg-icons';
 import { faRunning } from '@fortawesome/free-solid-svg-icons';
 import { faBed } from '@fortawesome/free-solid-svg-icons';
 import { faLineChart } from '@fortawesome/free-solid-svg-icons';
 import { faGear } from '@fortawesome/free-solid-svg-icons';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import NavBarItem from './NavBarItem.js';
 
 function NavBar() {
     return (
         <aside>
             <ul>
-                <li><FontAwesomeIcon icon={faList} /> <span>To-Do</span> <FontAwesomeIcon icon={faChevronRight} className="chevron"/></li>
-                <li><FontAwesomeIcon icon={faRunning} /> <span>Fitness</span> <FontAwesomeIcon icon={faChevronRight} className="chevron"/></li>
-                <li><FontAwesomeIcon icon={faBed} /> <span>Sleep</span> <FontAwesomeIcon icon={faChevronRight} className="chevron"/></li>
-                <li><FontAwesomeIcon icon={faLineChart} /> <span>Progress</span> <FontAwesomeIcon icon={faChevronRight} className="chevron"/></li>
-                <li><FontAwesomeIcon icon={faGear} /> <span>Settings</span> <FontAwesomeIcon icon={faChevronRight} className="chevron"/></li>
+                <li><NavBarItem redirect="/todo" icon={faList} name="To-Do"/></li>
+                <li><NavBarItem redirect="/fitness" icon={faRunning} name="Fitness"/></li>
+                <li><NavBarItem redirect="/sleep" icon={faBed} name="Sleep"/></li>
+                <li><NavBarItem redirect="/todo" icon={faLineChart} name="Progress"/></li>
+                <li><NavBarItem redirect="/todo" icon={faGear} name="Settings"/></li>
             </ul>
         </aside>
     );
