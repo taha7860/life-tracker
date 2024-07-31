@@ -1,0 +1,6 @@
+.calories {
+    border: 8px solid var(--hover-colour);
+    align-self: center;
+    border-radius: 100%;
+    padding: 40px 65px;
+}

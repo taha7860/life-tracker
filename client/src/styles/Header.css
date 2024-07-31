@@ -5,6 +5,7 @@ header {
     width: 100vw;
     background: linear-gradient(to bottom left, var(--primary-colour), var(--secondary-colour));
     border-bottom: 1px solid lightgray;
+    box-shadow: 0 3px 10px lightgray;
     z-index: 2;
 }
 

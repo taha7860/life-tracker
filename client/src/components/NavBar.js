@@ -13,8 +13,8 @@ function NavBar() {
                 <li><NavBarItem redirect="/todo" icon={faList} name="To-Do"/></li>
                 <li><NavBarItem redirect="/fitness" icon={faRunning} name="Fitness"/></li>
                 <li><NavBarItem redirect="/sleep" icon={faBed} name="Sleep"/></li>
-                <li><NavBarItem redirect="/todo" icon={faLineChart} name="Progress"/></li>
-                <li><NavBarItem redirect="/todo" icon={faGear} name="Settings"/></li>
+                <li><NavBarItem redirect="/progress" icon={faLineChart} name="Progress"/></li>
+                <li><NavBarItem redirect="/settings" icon={faGear} name="Settings"/></li>
             </ul>
         </aside>
     );

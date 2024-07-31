@@ -3,7 +3,7 @@
   --secondary-colour: rgb(255, 38, 0);
   --gradient-colour: rgb(255, 72, 0);
   --background-colour: white;
-  --hover-colour: rgb(223, 223, 223);
+  --hover-colour: rgba(242,239,237,255);
 }
 
 html, body {
