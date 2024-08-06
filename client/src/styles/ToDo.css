@@ -2,6 +2,15 @@ main {
     gap: 100px;
 }
 
+h2 {
+    margin-bottom: -75px;
+}
+
+h4 {
+    border-bottom: 1px solid var(--lightgray);
+    font-size: 100%;
+}
+
 .add {
     background-color: var(--background-colour);
     border: none;
@@ -16,4 +25,85 @@ main {
 
 .add span {
     margin-left: 5px;
+}
+
+.input {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 10px;
+}
+
+h5 {
+    font-size: 90%;
+    padding: 0.3rem 0.5rem;
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+.set-task {
+    padding: 0.2rem 0.5rem;
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+input[type="time"] {
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.start-time {
+    margin-right: 0.3rem;
+}
+
+.end-time {
+    margin-left: 0.3rem;
+}
+
+.input textarea {
+    border: none;
+    resize: none;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    display: block;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.confirm {
+    display: flex;
+    padding: 0.35rem 0.5rem;
+    justify-content: flex-end;
+}
+
+.tick, .cross {
+    color: gray;
+    margin: 0 0.3rem;
+    padding: 0.35rem 0;
+    border-radius: 100%;
+    transition: 0.3s ease-in-out;
+}
+
+.tick {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+}
+
+.cross {
+    padding-left: 0.45rem;
+    padding-right: 0.45rem;
+}
+
+.tick:hover {
+    color: rgb(0, 128, 0);
+    background-color: rgb(0 128 0 / 30%);
+}
+
+.cross:hover {
+    color: rgb(255, 0, 0);
+    background-color: rgb(255 0 0 / 30%);
 }

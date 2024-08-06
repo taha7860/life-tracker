@@ -5,7 +5,7 @@ function Meal({name}) {
     return (
         <section>
             <h3>{name}</h3>
-            <button className="add"><FontAwesomeIcon icon={faPlus}/> <span>Add</span></button>
+            <button className="add food"><FontAwesomeIcon icon={faPlus}/> <span>Add</span></button>
         </section>
     );
 }

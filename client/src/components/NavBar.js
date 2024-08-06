@@ -9,7 +9,7 @@ import NavBarItem from './NavBarItem.js';
 function NavBar() {
     return (
         <aside>
-            <ul>
+            <ul className="navigation">
                 <li><NavBarItem redirect="/todo" icon={faList} name="To-Do"/></li>
                 <li><NavBarItem redirect="/fitness" icon={faRunning} name="Fitness"/></li>
                 <li><NavBarItem redirect="/sleep" icon={faBed} name="Sleep"/></li>

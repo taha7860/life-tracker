@@ -27,7 +27,7 @@ ul {
     text-decoration: none;
 }
 
-li:last-child {
+.navigation li:last-child {
     margin-top: 100px;
 }
 

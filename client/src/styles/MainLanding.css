@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: auto;
 }
 
 .innercontainer {
@@ -73,12 +74,20 @@ a:hover {
 
 @media screen and (max-width: 480px) {
     .innercontainer {
+        margin-top: 200px;
         flex-direction: column;
         height: 50rem;
         width: 18rem;
     }
     .text {
         text-align: center;
+    }
+    .image {
+        height: 27%;
+        justify-content: center;
         margin-bottom: 70px;
+    }
+    #image1 {
+        height: 100%;
     }
 }
