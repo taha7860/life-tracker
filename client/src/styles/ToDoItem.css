@@ -7,7 +7,8 @@
 
 .checkbox-container {
     position: relative;
-    top: 4px;
+    top: 0.25rem;
+    flex: 1;
 }
 
 input[type="checkbox"] {
@@ -42,16 +43,62 @@ label:hover::after {
     opacity: 1;
 }
 
-input[type="checkbox"]:checked + label::after {
-    opacity: 1;
+input[type="checkbox"]:checked {
+    & .todo-item {
+        color: green;
+    }
+    + label::after {
+        opacity: 1;
+    }
 }
 
 .todo-container {
     margin-left: 10px;
     display: flex;
     flex-direction: column;
+    word-break: break-word;
+    flex: 40;
+}
+
+.todo-container :first-child {
+    font-size: 0.95rem;
 }
 
 .todo-container :last-child {
     font-size: 0.7rem;
+    color: gray;
+}
+
+.clock {
+    margin-right: 3px;
+}
+
+.edit-container {
+    position: relative;
+    align-self: flex-start;
+    left: 15px;
+    background-color: var(--background-colour);
+    opacity: 0;
+    margin-left: -25px;
+}
+
+.edit-container:hover {
+    opacity: 1;
+}
+
+.edit, .delete {
+    color: rgba(0, 0, 0, 0.295);
+    margin: 0 3px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.edit:hover {
+    color: rgba(0, 0, 0, 0.493);
+    background-color: rgb(211 211 211 / 30%);
+}
+
+.delete:hover {
+    color: var(--primary-colour);
+    background-color: rgb(255 0 0 / 30%);
 }
