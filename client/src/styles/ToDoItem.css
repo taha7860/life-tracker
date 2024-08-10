@@ -102,3 +102,25 @@ input[type="checkbox"]:checked {
     color: var(--primary-colour);
     background-color: rgb(255 0 0 / 30%);
 }
+
+.completed {
+    color: gray;
+    height: 100%;
+    label {
+        border-color: gray;
+        background-color: rgb(128 128 128 / 30%);
+    }
+    label::after {
+        border-color: gray;
+    }
+}
+
+.completed::after {
+    position: relative;
+    background: gray;
+    bottom: 50%;
+    content: "";
+    height: 1px;
+    width: 100%;
+    display: block;
+}
