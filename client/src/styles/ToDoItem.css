@@ -5,6 +5,13 @@
     flex-direction: row;
 }
 
+.side-todo-item {
+    border-bottom: 1px solid var(--lightgray);
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: row;
+}
+
 .checkbox-container {
     position: relative;
     top: 0.25rem;
@@ -21,8 +28,8 @@ label {
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    background-color: rgb(255 0 0 / 30%);
-    border: 2px solid red;
+    background-color: rgb(0 0 255 / 30%);
+    border: 2px solid blue;
 }
 
 label::after {
@@ -32,21 +39,42 @@ label::after {
     content: '';
     height: 8px;
     width: 4px;
-    border: 2px solid red;
+    border: 2px solid blue;
     opacity: 0;
     border-left: none;
     border-top: none;
     transform: rotate(45deg);
 }
 
-label:hover::after {
+.side-todo-item .checkbox-container > label {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: rgb(0 128 0 / 30%);
+    border: 2px solid green;
+}
+
+.side-todo-item .checkbox-container > label::after {
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    content: '';
+    height: 8px;
+    width: 4px;
+    border: 2px solid green;
+    opacity: 0;
+    border-left: none;
+    border-top: none;
+    transform: rotate(45deg);
+}
+
+.checkbox-container > label:hover::after {
     opacity: 1;
 }
 
+
 input[type="checkbox"]:checked {
-    & .todo-item {
-        color: green;
-    }
     + label::after {
         opacity: 1;
     }
@@ -60,13 +88,14 @@ input[type="checkbox"]:checked {
     flex: 40;
 }
 
-.todo-container :first-child {
-    font-size: 0.95rem;
-}
-
-.todo-container :last-child {
+.todo-container section:last-child {
     font-size: 0.7rem;
     color: gray;
+}
+
+.todo-container section:first-child {
+    font-size: 0.95rem;
+    color: black;
 }
 
 .clock {
@@ -105,22 +134,12 @@ input[type="checkbox"]:checked {
 
 .completed {
     color: gray;
-    height: 100%;
-    label {
+    text-decoration: line-through;
+    .checkbox-container > label {
         border-color: gray;
         background-color: rgb(128 128 128 / 30%);
     }
-    label::after {
+    .checkbox-container > label::after {
         border-color: gray;
     }
-}
-
-.completed::after {
-    position: relative;
-    background: gray;
-    bottom: 50%;
-    content: "";
-    height: 1px;
-    width: 100%;
-    display: block;
 }
