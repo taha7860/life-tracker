@@ -1,5 +1,39 @@
 .item-container {
-    background-color: gray;
+    background-color: var(--lightgray);
     height: 100px;
     width: 100%;
+    text-transform: capitalize;
+    border: 1px solid var(--background-colour);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item-description {
+    padding-left: 10px;
+}
+
+.nutrients {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}
+
+.food-name {
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+.add-item {
+    height: 35px;
+    width: 35px;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 2px solid black;
+    margin: 10px 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.add-item:hover {
+    border-color: var(--primary-colour);
+    color: var(--primary-colour);
 }
