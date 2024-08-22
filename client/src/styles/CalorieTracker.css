@@ -9,4 +9,5 @@
     border: 8px solid var(--hover-colour);
     border-radius: 100%;
     align-self: center;
+    flex-wrap: wrap-reverse;
 }
