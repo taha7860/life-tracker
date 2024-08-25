@@ -6,6 +6,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import SearchItem from './SearchItem';
 import { nanoid } from 'nanoid';
+import FoodItem from './FoodItem';
 
 function Meal(props) {
     async function makeSearch(query) {
@@ -20,12 +21,11 @@ function Meal(props) {
             const data = await response.json();
 
             const foods = data.foods.slice(0, maxResults);
-            console.log(foods);
 
             const updatedSearches = foods.map((search) => {
                 const getNutrient = (name) => {
                     const nutrient = search.foodNutrients.find((nutrient) => nutrient.nutrientName === name);
-                    return nutrient ? nutrient.value : '';
+                    return nutrient ? nutrient.value : 0;
                 }
 
                 return { 
@@ -44,6 +44,11 @@ function Meal(props) {
         }
     }
 
+    function addFood(calories, protein, carbs, fat, serving) {
+        const foodItem = { calories, protein, carbs, fat, serving, id: `food-${nanoid()}` };
+        setFoods([...foods, foodItem]);
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
         setMaxResults(20);
@@ -52,9 +57,22 @@ function Meal(props) {
 
     const [maxResults, setMaxResults] = useState(20);
     const [isAddingFood, setIsAddingFood] = useState(false);
+    const [IsAdding, setIsAdding] = useState(false);
     const [query, setQuery] = useState('');
     const [searches, setSearches] = useState([]);
-    const [foodList, setFoodList] = useState(props.foodList);
+    const [foods, setFoods] = useState(props.foodList);
+
+    const foodList = foods?.map((food) => (
+        <FoodItem
+            name={food.name}
+            id={food.id}
+            serving={food.serving}
+            calories={food.calories}
+            carbs={food.carbs}
+            fat={food.fat}
+            protein={food.protein}
+        />
+    ))
 
     const searchList = searches?.map((search) => (
         <SearchItem
@@ -66,6 +84,8 @@ function Meal(props) {
             fat={search.fat}
             protein={search.protein}
             setIsAddingFood={setIsAddingFood}
+            addFood={addFood}
+            setIsAdding={setIsAdding}
         />
     ));
 
@@ -86,7 +106,7 @@ function Meal(props) {
                 </button>
                 <div className="msg"></div>
             </form>
-            <ul>
+            <ul className='search-results'>
                 {searchList}
                 { searchList.length > 0 && maxResults <= 60 && searchMore }
             </ul>
@@ -96,7 +116,7 @@ function Meal(props) {
     return (
         <section>
             <h3>{props.name}</h3>
-            {props.foodList}
+            {foodList}
             <button className="add" onClick={() => setIsAddingFood(true)}><FontAwesomeIcon icon={faPlus}/> <span>Add</span></button>
             { isAddingFood && foodForm }
         </section>

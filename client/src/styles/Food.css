@@ -41,3 +41,96 @@
     border-color: var(--primary-colour);
     color: var(--primary-colour);
 }
+
+.food-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 45px;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    box-shadow: 0 0 10px lightgray;
+    background-color: white;
+    top: 20%;
+    left: 35%;
+    height: 450px;
+    width: 30%;
+    justify-content: center;
+}
+
+.macros {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 35px;
+}
+
+.macros div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    animation: animate 5s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+    background: linear-gradient(to bottom, #ff5f6d, #ffc371);
+}
+
+@keyframes animate {
+    0%, 100% {
+        border-radius: 64% 36% 64% 36% / 39% 70% 30% 61%;
+    }
+    33% {
+        border-radius: 36% 64% 38% 62% / 61% 54% 46% 39% ;
+    }
+    66% {
+        border-radius: 69% 31% 53% 47% / 41% 62% 38% 59% ;
+    }
+}
+
+.macros ul {
+    list-style: initial;
+    margin: auto;
+    color: black;
+    font-size: 1.2rem;
+    line-height: 2.5;
+}
+
+.macros span {
+    margin-left: 1px;
+    font-size: 0.9rem;
+}
+
+.macros ul :first-child::marker{
+    color: red;
+}
+
+.macros ul :nth-child(2)::marker{
+    color: rgb(255, 230, 0);
+}
+
+.macros ul :last-child::marker{
+    color: dodgerblue;
+}
+
+input[type='number'] {
+    width: 35px;
+}
+
+.amount {
+    margin-top: -30px;
+}
+
+.item-buttons {
+    display: flex;
+    margin-top: 10px;
+}
+
+.item-buttons .ok {
+    flex: 1;
+}
+
+.item-buttons .cancel {
+    flex: 1;
+}

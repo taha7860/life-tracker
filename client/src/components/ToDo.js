@@ -117,7 +117,7 @@ function ToDo() {
 
   const inputField = (
     <div className="input">
-      <h5>Set time and task name: </h5>
+      <h5 className='input-header'>Set time and task name: </h5>
       <section className="set-task">
         <input type="time" className="start-time"></input>
         -
@@ -135,7 +135,7 @@ function ToDo() {
 
   const sideInputField = (
     <div className="input">
-      <h5>Set time and task name: </h5>
+      <h5 className='input-header'>Set time and task name: </h5>
       <section className="set-task">
         <textarea></textarea>
       </section>
@@ -152,14 +152,14 @@ function ToDo() {
     <main>
       <h2>Plan your day</h2>
       <section className="plan">
-          <h4>Set time based work:</h4>
+          <h4 className='header'>Set time based work:</h4>
           <ul>
             {tasksList}
           </ul>
           {addingTask ? inputField : addButton}
       </section>
       <section className="tasks">
-          <h4>Side tasks:</h4>
+          <h4 className='header'>Side tasks:</h4>
           <ul>
             {sideTasksList}
           </ul>

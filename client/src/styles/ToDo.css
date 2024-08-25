@@ -6,7 +6,7 @@ h2 {
     margin-bottom: -75px;
 }
 
-h4 {
+.header {
     border-bottom: 1px solid var(--lightgray);
     font-size: 100%;
 }
@@ -36,7 +36,7 @@ h4 {
     border-radius: 10px;
 }
 
-h5 {
+.input-header {
     font-size: 90%;
     padding: 0.3rem 0.5rem;
     border-bottom: 1px solid rgb(170, 170, 170);
