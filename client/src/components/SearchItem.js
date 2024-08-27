@@ -7,8 +7,7 @@ function SearchItem(props) {
         <li className="item-container">
             <button className='add-item' onClick={() => {
                 props.setIsAddingFood(false);
-                props.setIsAdding(true);
-                props.addFood(props.calories, props.protein, props.carbs, props.fat, props.serving);
+                props.addFood(props.name, props.calories, props.protein, props.carbs, props.fat, props.serving);
             }}><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon></button>
             <div className='item-description'>
                 <div className='food-name'>{props.name}</div> 

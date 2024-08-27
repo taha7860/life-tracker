@@ -44,8 +44,8 @@ function Meal(props) {
         }
     }
 
-    function addFood(calories, protein, carbs, fat, serving) {
-        const foodItem = { calories, protein, carbs, fat, serving, id: `food-${nanoid()}` };
+    function addFood(name, calories, protein, carbs, fat, serving) {
+        const foodItem = { name, calories, protein, carbs, fat, serving, id: `food-${nanoid()}` };
         setFoods([...foods, foodItem]);
     }
 
@@ -57,10 +57,9 @@ function Meal(props) {
 
     const [maxResults, setMaxResults] = useState(20);
     const [isAddingFood, setIsAddingFood] = useState(false);
-    const [IsAdding, setIsAdding] = useState(false);
     const [query, setQuery] = useState('');
     const [searches, setSearches] = useState([]);
-    const [foods, setFoods] = useState(props.foodList);
+    const [foods, setFoods] = useState([]);
 
     const foodList = foods?.map((food) => (
         <FoodItem
@@ -71,6 +70,7 @@ function Meal(props) {
             carbs={food.carbs}
             fat={food.fat}
             protein={food.protein}
+            setIsAddingFood={setIsAddingFood}
         />
     ))
 
@@ -85,7 +85,6 @@ function Meal(props) {
             protein={search.protein}
             setIsAddingFood={setIsAddingFood}
             addFood={addFood}
-            setIsAdding={setIsAdding}
         />
     ));
 
@@ -115,8 +114,10 @@ function Meal(props) {
 
     return (
         <section>
-            <h3>{props.name}</h3>
-            {foodList}
+            <h3 className='header fitness'>{props.name}</h3>
+            <ul className='food-list'>
+                {foodList}
+            </ul>
             <button className="add" onClick={() => setIsAddingFood(true)}><FontAwesomeIcon icon={faPlus}/> <span>Add</span></button>
             { isAddingFood && foodForm }
         </section>

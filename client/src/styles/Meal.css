@@ -1,3 +1,7 @@
+.header.fitness {
+    font-size: 1.05rem;
+}
+
 .search-food {
     position: absolute;
     display: flex;

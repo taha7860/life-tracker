@@ -8,7 +8,6 @@ h2 {
 
 .header {
     border-bottom: 1px solid var(--lightgray);
-    font-size: 100%;
 }
 
 .add {

@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import '../styles/Food.css';
 
 function FoodItem(props) {
-    return (
-        <div className="food-item">
+    const [isAddingOrEditing, setIsAddingOrEditing] = useState(true);
+    const [added, setAdded] = useState(false);
+
+    const addEditForm = (
+        <div className="food-item-form">
             <div className='macros'>
                 <div>
                     <h3>Calories:</h3>
@@ -23,10 +27,38 @@ function FoodItem(props) {
                 <input type='number'></input>
             </div>
             <div className='item-buttons'>
-                <button className='ok'>OK</button>
-                <button className='cancel'>Cancel</button>
+                <button className='ok' onClick={() => {
+                    setIsAddingOrEditing(false);
+                    setAdded(true);
+                }}>OK</button>
+                <button className='cancel' onClick={() => {
+                    setIsAddingOrEditing(false);
+                    props.setIsAddingFood(true);
+                }}>Cancel</button>
             </div>
         </div>
+    )
+
+    const foodItem = (
+        <li className="item-container added">
+            <div className='item-description'>
+                <div className='food-name'>{props.name}</div> 
+                <p className='nutrients'>
+                    Per {props.serving} - 
+                    Calories: {props.calories}kcal | 
+                    Protein: {props.protein}g | 
+                    Carbs: {props.carbs}g | 
+                    Fat: {props.fat}g
+                </p>
+            </div>
+        </li>
+    );
+
+    return (
+        <>
+            { added && foodItem }
+            { isAddingOrEditing && addEditForm }
+        </>
     )
 }
 
