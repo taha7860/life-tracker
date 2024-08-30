@@ -1,15 +1,13 @@
 import '../styles/ToDo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import ToDoItem from './ToDoItem';
 import { nanoid } from 'nanoid';
 import SideToDoItem from './SideToDoItem';
 
 function ToDo() {
-  function addTask(name, startTime, endTime) {
+  const addTask = (name, startTime, endTime) => {
     const newTask = { name, startTime, endTime, id: `todo-${nanoid()}`, completed: false};
     setTasks([...tasks, newTask]);
     document.querySelector('textarea').value = '';
@@ -17,7 +15,7 @@ function ToDo() {
     document.querySelector('.end-time').value = null;
   }
 
-  function toggleCompleted(id) {
+  const toggleCompleted = id => {
     const toggledTasks = tasks.map((task) => {
       if (task.id === id) {
         return { ...task, completed: !task.completed };
@@ -27,12 +25,12 @@ function ToDo() {
     setTasks(toggledTasks);
   }
 
-  function deleteTask(id) {
+  const deleteTask = id => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
     setTasks(updatedTasks);
   }
 
-  function editTask(id, newName, newStartTime, newEndTime) {
+  const editTask = (id, newName, newStartTime, newEndTime) => {
     const editedTasks = tasks.map((task) => {
       if (task.id === id) {
         return { ...task, name: newName, startTime: newStartTime, endTime: newEndTime };
@@ -42,13 +40,13 @@ function ToDo() {
     setTasks(editedTasks);
   }
 
-  function addSideTask(name) {
+  const addSideTask = name => {
     const newSideTask = { name, id: `side-${nanoid()}`, completed: false};
     setSideTasks([...sideTasks, newSideTask]);
     document.querySelector('textarea').value = '';
   }
 
-  function toggleSideCompleted(id) {
+  const toggleSideCompleted = id => {
     const toggledSideTasks = sideTasks.map((task) => {
       if (task.id === id) {
         return { ...task, completed: !task.completed };
@@ -58,12 +56,12 @@ function ToDo() {
     setSideTasks(toggledSideTasks);
   }
 
-  function deleteSideTask(id) {
+  const deleteSideTask = id => {
     const updatedSideTasks = sideTasks.filter((task) => task.id !== id);
     setSideTasks(updatedSideTasks);
   }
 
-  function editSideTask(id, newName) {
+  const editSideTask = (id, newName) => {
     const editedSideTasks = sideTasks.map((task) => {
       if (task.id === id) {
         return { ...task, name: newName };

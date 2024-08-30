@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import '../styles/Food.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 function FoodItem(props) {
     const [isAddingOrEditing, setIsAddingOrEditing] = useState(true);
@@ -37,7 +39,14 @@ function FoodItem(props) {
                 }}>Cancel</button>
             </div>
         </div>
-    )
+    );
+
+    const foodEdit = (
+        <div className="food-edit-container">
+            <FontAwesomeIcon icon={faEdit} className="edit"></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faTrashAlt} className="delete"></FontAwesomeIcon>
+        </div>
+    );
 
     const foodItem = (
         <li className="item-container added">
@@ -51,6 +60,7 @@ function FoodItem(props) {
                     Fat: {props.fat}g
                 </p>
             </div>
+            {foodEdit}
         </li>
     );
 

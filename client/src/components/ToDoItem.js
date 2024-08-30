@@ -1,11 +1,7 @@
 import '../styles/ToDoItem.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faEdit, faTrashAlt, faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 function ToDoItem(props) {
     const [isEditingTask, setIsEditingTask] = useState(false);

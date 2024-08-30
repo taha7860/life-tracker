@@ -1,9 +1,5 @@
 import '../styles/NavBar.css';
-import { faList } from '@fortawesome/free-solid-svg-icons';
-import { faRunning } from '@fortawesome/free-solid-svg-icons';
-import { faBed } from '@fortawesome/free-solid-svg-icons';
-import { faLineChart } from '@fortawesome/free-solid-svg-icons';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
+import { faList, faRunning, faBed, faLineChart, faGear } from '@fortawesome/free-solid-svg-icons';
 import NavBarItem from './NavBarItem.js';
 
 function NavBar() {

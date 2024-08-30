@@ -1,10 +1,7 @@
 import '../styles/ToDoItem.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrashAlt, faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 function SideToDoItem(props) {
     const [isEditingSideTask, setIsEditingSideTask] = useState(false);

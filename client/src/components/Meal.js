@@ -1,15 +1,13 @@
 import '../styles/Meal.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faSearch, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import SearchItem from './SearchItem';
 import { nanoid } from 'nanoid';
 import FoodItem from './FoodItem';
 
 function Meal(props) {
-    async function makeSearch(query) {
+    const makeSearch = async query => {
         const apiKey = 'tBa0jpWWxDjcAyWznl4uu8W1cvWrYgEQkbulz8Zb';
         const URL = `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${apiKey}&query=${query}`;
 
@@ -44,12 +42,12 @@ function Meal(props) {
         }
     }
 
-    function addFood(name, calories, protein, carbs, fat, serving) {
+    const addFood = (name, calories, protein, carbs, fat, serving) => {
         const foodItem = { name, calories, protein, carbs, fat, serving, id: `food-${nanoid()}` };
         setFoods([...foods, foodItem]);
     }
 
-    function handleSubmit(e) {
+    const handleSubmit = e => {
         e.preventDefault();
         setMaxResults(20);
         makeSearch(query);

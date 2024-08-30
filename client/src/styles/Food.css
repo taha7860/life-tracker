@@ -154,6 +154,39 @@ input[type='number'] {
     margin-top: 10px;
 }
 
-.item-container.added .item-description{
+.item-container.added .item-description {
     border-left: none;
+    flex: 10;
+}
+
+.item-container.added {
+    display: flex;
+}
+
+.food-edit-container {
+    position: relative;
+    background-color: transparent;
+    opacity: 0;
+    flex: 1;
+}
+
+.food-edit-container:hover {
+    opacity: 1;
+}
+
+.edit, .delete {
+    color: rgba(0, 0, 0, 0.295);
+    margin: 0 3px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.edit:hover {
+    color: rgba(0, 0, 0, 0.493);
+    background-color: rgb(211 211 211 / 30%);
+}
+
+.delete:hover {
+    color: var(--primary-colour);
+    background-color: rgb(255 0 0 / 30%);
 }
